@@ -1,0 +1,8 @@
+git config --global user.name itsquelc
+git config --global user.email raquelnunescirino@gmail.com
+
+
+Executar, no terminal, 1 por vez, em ordem:
+    dotnet new mvc -o QuelloCook
+    dotnet new sln --name QuelloCook
+    dotnet sln add QuelloCook\QuelloCook.csproj
