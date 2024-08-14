@@ -6,3 +6,8 @@ Executar, no terminal, 1 por vez, em ordem:
     dotnet new mvc -o QuelloCook
     dotnet new sln --name QuelloCook
     dotnet sln add QuelloCook\QuelloCook.csproj
+
+Criar migrações
+dotnet ef migrations add criar-banco
+
+dotnet ef database update
