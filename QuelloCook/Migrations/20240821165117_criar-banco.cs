@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace QuelloCook.Migrations
 {
     /// <inheritdoc />
@@ -75,10 +77,11 @@ namespace QuelloCook.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    nome = table.Column<string>(type: "varchar(30)", maxLength: 30, nullable: false)
+                    Nome = table.Column<string>(type: "varchar(30)", maxLength: 30, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    foto = table.Column<string>(type: "varchar(300)", maxLength: 300, nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4")
+                    Foto = table.Column<string>(type: "varchar(300)", maxLength: 300, nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    ExibirHome = table.Column<bool>(type: "tinyint(1)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -320,19 +323,19 @@ namespace QuelloCook.Migrations
                 columns: table => new
                 {
                     ReceitaId = table.Column<int>(type: "int", nullable: false),
-                    IngredientesId = table.Column<int>(type: "int", nullable: false),
-                    IngredienteId = table.Column<int>(type: "int", nullable: true),
+                    IngredienteId = table.Column<int>(type: "int", nullable: false),
                     Quantidade = table.Column<string>(type: "varchar(30)", maxLength: 30, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ReceitaIngrente", x => new { x.ReceitaId, x.IngredientesId });
+                    table.PrimaryKey("PK_ReceitaIngrente", x => new { x.ReceitaId, x.IngredienteId });
                     table.ForeignKey(
                         name: "FK_ReceitaIngrente_Ingrediente_IngredienteId",
                         column: x => x.IngredienteId,
                         principalTable: "Ingrediente",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_ReceitaIngrente_Receita_ReceitaId",
                         column: x => x.ReceitaId,
@@ -341,6 +344,99 @@ namespace QuelloCook.Migrations
                         onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[,]
+                {
+                    { "0b44ca04-f6b0-4a8f-a953-1f2330d30894", null, "Administrador", "ADMINISTRADOR" },
+                    { "bec71b05-8f3d-4849-88bb-0e8d518d2de8", null, "Usuário", "USUÁRIO" },
+                    { "ddf093a6-6cb5-4ff7-9a64-83da34aee005", null, "Moderador", "MODERADOR" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[] { "ddf093a6-6cb5-4ff7-9a64-83da34aee005", 0, "5ad0988d-4f16-497e-8a01-c002bca52163", "admin@quellocook.com", true, false, null, "ADMIN@QUELLOCOOK.COM", "ADMIN", "AQAAAAIAAYagAAAAEJzupulTdZ9ua33W8k2tg3Ch+Dly/HCsGTM8hCsRz7SUZkXZcYfsXqB5+oX6bFz93g==", null, false, "73c04668-fcad-430c-8c42-0b689448268c", false, "Admin" });
+
+            migrationBuilder.InsertData(
+                table: "Categoria",
+                columns: new[] { "Id", "ExibirHome", "Foto", "Nome" },
+                values: new object[,]
+                {
+                    { 1, true, "/img/categorias/1.jpg", "Acompanhamentos" },
+                    { 2, false, "/img/categorias/2.jpg", "Bebidas" },
+                    { 3, true, "/img/categorias/3.jpg", "Bolos" },
+                    { 4, true, "/img/categorias/4.jpg", "Carnes" },
+                    { 5, true, "/img/categorias/5.jpg", "Frango" },
+                    { 6, false, "/img/categorias/6.jpg", "Lanches" },
+                    { 7, false, "/img/categorias/7.jpg", "Massas" },
+                    { 8, false, "/img/categorias/8.jpg", "Molhos" },
+                    { 9, true, "/img/categorias/9.jpg", "Pratos Principais" },
+                    { 10, false, "/img/categorias/10.jpg", "Peixes" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Ingrediente",
+                columns: new[] { "Id", "Nome" },
+                values: new object[,]
+                {
+                    { 1, "Carne Moída" },
+                    { 2, "Pimentão Verde" },
+                    { 3, "Pimentão Vermelho" },
+                    { 4, "Pimentão Amarelo" },
+                    { 5, "Cebola" },
+                    { 6, "Curry" },
+                    { 7, "Pimenta Calabresa" },
+                    { 8, "Páprica Picante" },
+                    { 9, "Sal" },
+                    { 10, "Orégano" },
+                    { 11, "Pão Sirio" },
+                    { 12, "Cream Cheese" },
+                    { 13, "Cheddar" },
+                    { 14, "Azeite" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUserRoles",
+                columns: new[] { "RoleId", "UserId" },
+                values: new object[,]
+                {
+                    { "0b44ca04-f6b0-4a8f-a953-1f2330d30894", "ddf093a6-6cb5-4ff7-9a64-83da34aee005" },
+                    { "bec71b05-8f3d-4849-88bb-0e8d518d2de8", "ddf093a6-6cb5-4ff7-9a64-83da34aee005" },
+                    { "ddf093a6-6cb5-4ff7-9a64-83da34aee005", "ddf093a6-6cb5-4ff7-9a64-83da34aee005" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Receita",
+                columns: new[] { "Id", "CategoriaId", "Descricao", "Dificuldade", "Foto", "Nome", "Preparo", "Rendimento", "TempoPreparo" },
+                values: new object[] { 1, 4, "Prato perfeito para um lanche rápido ou mesmo uma refeição picante. Carne moída, pimentões, temperos e muito queijooooo", 1, "/img/receitas/1.jpg", "Carne Moída Mexicana", "Comece pela preparação dos ingredientes, pique os pimentões e a cebola em pequenos cubos, se preferir você também pode usar um processador de alimentos.Coloque a carne moída para fritar em uma panela com um pouco de azeite.Quando a carne moída já não estiver mais crua, adicione os pimentões e a cebola, mexendo bem para misturar todos os ingredientes.Aguarde alguns instante e adicione os temperos, mexendo novamente para misturar.Frite por mais alguns minutos a carne com os demais ingredientes.Adicione o Cream Cheese e o Queijo Cheddar, mexendo bem para evitar que queime o fundo e ajudar os queijos a derreterem.Quando os queijos já estiverem bem derretidos e misturados com os demais ingredientes, sirva acompanhado do Pão Sirio ou de Doritos.", 3, "20 minutos" });
+
+            migrationBuilder.InsertData(
+                table: "Usuario",
+                columns: new[] { "UsuarioId", "DataNascimento", "Foto", "Nome" },
+                values: new object[] { "ddf093a6-6cb5-4ff7-9a64-83da34aee005", new DateTime(2008, 2, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), "/img/usuarios/avatar.png", "Raquel Nunes Cirino" });
+
+            migrationBuilder.InsertData(
+                table: "ReceitaIngrente",
+                columns: new[] { "IngredienteId", "ReceitaId", "Quantidade" },
+                values: new object[,]
+                {
+                    { 1, 1, "500g" },
+                    { 3, 1, "1 pequeno" },
+                    { 4, 1, "1 pequeno" },
+                    { 5, 1, "1 pequeno" },
+                    { 6, 1, "1 colher sopa" },
+                    { 7, 1, "1 colher sopa" },
+                    { 8, 1, "1 colher sopa" },
+                    { 9, 1, "1 colher sopa" },
+                    { 10, 1, "1 colher sopa" },
+                    { 11, 1, "A vontade" },
+                    { 12, 1, "200g" },
+                    { 13, 1, "200g" },
+                    { 14, 1, "Um pouco" }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

@@ -11,7 +11,7 @@ namespace QuelloCook.Models;
         public Receita Receita {get; set;}
 
         [Key, Column(Order = 2)]
-        public int IngredientesId { get; set; }
+        public int IngredienteId { get; set; }
         [ForeignKey("IngredienteId")]
         public Ingrediente Ingrediente {get; set;}
 

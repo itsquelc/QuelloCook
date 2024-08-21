@@ -12,9 +12,10 @@ namespace QuelloCook.Models;
 
         [Required]
         [StringLength(30)]
-        public string nome { get; set; }
+        public string Nome { get; set; }
 
         [StringLength(300)]
-        public string foto { get; set; }
+        public string Foto { get; set; }
 
+        public bool ExibirHome { get; set; } = false;
     }
