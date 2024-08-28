@@ -10,4 +10,9 @@ Executar, no terminal, 1 por vez, em ordem:
 Criar migrações
 dotnet ef migrations add criar-banco
 
-dotnet ef database update
+dotnet ef database update - carrega a migração
+
+web -> dotnet
+móvel -> npm i
+
+.ThenInclude -> incluir algo q ja esta incluso 

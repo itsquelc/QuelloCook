@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using QuelloCook.Data;
 using QuelloCook.Models;
 using QuelloCook.ViewModels;
@@ -20,10 +21,25 @@ public class HomeController : Controller
     public IActionResult Index()
     {
         HomeVM home = new() {
-            Categorias = _context.Categorias.ToList(),
-            Receitas = _context.Receitas.ToList()
+            Categorias = _context.Categorias
+            .Where(c => c.ExibirHome)
+            .ToList(),
+            Receitas = _context.Receitas
+            .Include(r => r.Categoria)
+            .Include(r => r.Ingredientes)
+            .ToList()
         };
         return View(home);
+    }
+
+    public IActionResult Receita(int id)
+    { 
+        Receita receita = _context.Receitas
+        .Include(r => r.Categoria)
+        .Include(r => r.Ingredientes)
+        .ThenInclude(i => i.Ingrediente)
+        .FirstOrDefault(r => r.Id == id);
+        return View(receita);
     }
 
     public IActionResult Privacy()
