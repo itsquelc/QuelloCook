@@ -16,3 +16,8 @@ web -> dotnet
 móvel -> npm i
 
 .ThenInclude -> incluir algo q ja esta incluso 
+
+@foreach - QUANDO TEM LISTA
+SPLIT - QUEBRA DO TEXTO
+UL - faz a lista normal com caracter de quadradinho, bolinha
+OL - lista por numero
