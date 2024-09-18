@@ -21,3 +21,10 @@ móvel -> npm i
 SPLIT - QUEBRA DO TEXTO
 UL - faz a lista normal com caracter de quadradinho, bolinha
 OL - lista por numero
+
+Usuario service - application Url profiles louch settings
+
+feito
+confirmar email 
+
+terminar usuario service
