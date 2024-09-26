@@ -76,8 +76,20 @@ namespace QuelloCook.Controllers;
                 {
                     ModelState.AddModelError(string.Empty, error);
                 }
-                
+                register.Enviado = result == null;
             }
+            return View(register);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> ConfirmarEmail(string userId, string code)
+        {
+            if (userId == null || code == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            await _usuarioService.ConfirmarEmail(userId, code);
+            return View(true);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

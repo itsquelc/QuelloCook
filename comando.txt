@@ -26,7 +26,5 @@ Usuario service - application Url profiles louch settings
 
 feito
 confirmar email 
-
-terminar usuario service
-
-ACCOUNT CONTROLLER CS 77
+ 
+ linha 98 account registro
