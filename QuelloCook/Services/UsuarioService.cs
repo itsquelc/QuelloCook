@@ -263,7 +263,7 @@ public class UsuarioService : IUsuarioService
 
         <!-- start preheader -->
         <div class=""preheader"" style=""display: none; max-width: 0; max-height: 0; overflow: hidden; font-size: 1px; line-height: 1px; color: #fff; opacity: 0;"">
-            Website GCoock - Confirmação de Conta.
+            Website QuelloCook - Confirmação de Conta.
         </div>
         <!-- end preheader -->
 
@@ -282,7 +282,7 @@ public class UsuarioService : IUsuarioService
                 <tr>
                     <td align=""center"" valign=""top"" style=""padding: 36px 24px;"">
                     <a href=""localhost:5143"" target=""_blank"" style=""display: inline-block;"">
-                        <img src=""https://github.com/3-MTecPi/GCookA/blob/b2cff88fe35a5c5283b04639ca5caa43ee91a6bb/GCook/wwwroot/img/logo.png?raw=true"" alt=""Logo"" border=""0"" width=""100"" style=""display: block; width: 100px; max-width: 400px; min-width: 100px;"">
+                        <img src=""https://github.com/3-MTecPi/QuelloCookA/blob/b2cff88fe35a5c5283b04639ca5caa43ee91a6bb/GCook/wwwroot/img/logo.png?raw=true"" alt=""Logo"" border=""0"" width=""100"" style=""display: block; width: 100px; max-width: 400px; min-width: 100px;"">
                     </a>
                     </td>
                 </tr>
@@ -333,7 +333,7 @@ public class UsuarioService : IUsuarioService
                 <!-- start copy -->
                 <tr>
                     <td align=""left"" bgcolor=""#ffffff"" style=""padding: 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;"">
-                    <p style=""margin: 0;"">Clique no botão abaixo para confirmar a criação de sua conta. Se você não solicitou acesso ao site de receitas GCook, apenas exclua esse email.
+                    <p style=""margin: 0;"">Clique no botão abaixo para confirmar a criação de sua conta. Se você não solicitou acesso ao site de receitas QuelloCook, apenas exclua esse email.
                         .</p>
                     </td>
                 </tr>
@@ -363,7 +363,7 @@ public class UsuarioService : IUsuarioService
                 <tr>
                     <td align=""left"" bgcolor=""#ffffff"" style=""padding: 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;"">
                     <p style=""margin: 0;"">Se isto não funcionar, clique no link a seguir em um navegador:</p>
-                    <p style=""margin: 0;""><a href=""" + url + @""" target=""_blank"">https://gcook.com.br/confirmarEmail</a></p>
+                    <p style=""margin: 0;""><a href=""" + url + @""" target=""_blank"">https://QuelloCook.com.br/confirmarEmail</a></p>
                     </td>
                 </tr>
                 <!-- end copy -->
@@ -371,7 +371,7 @@ public class UsuarioService : IUsuarioService
                 <!-- start copy -->
                 <tr>
                     <td align=""left"" bgcolor=""#ffffff"" style=""padding: 20px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; border-bottom: 3px solid #d4dadf"">
-                    <p style=""margin: 0;"">Atenciosamente,<br> Equipe GCook</p>
+                    <p style=""margin: 0;"">Atenciosamente,<br> Equipe QuelloCook</p>
                     </td>
                 </tr>
                 <!-- end copy -->
@@ -399,7 +399,7 @@ public class UsuarioService : IUsuarioService
                 <!-- start permission -->
                 <tr>
                     <td align=""center"" bgcolor=""#e9ecef"" style=""padding: 12px 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; color: #666;"">
-                    <p style=""margin: 0;"">Você recebeu este email por solicitar acesso ao site GCook. Se você não solicitou acesso, apenas apague este email.</p>
+                    <p style=""margin: 0;"">Você recebeu este email por solicitar acesso ao site QuelloCook. Se você não solicitou acesso, apenas apague este email.</p>
                     </td>
                 </tr>
                 <!-- end permission -->

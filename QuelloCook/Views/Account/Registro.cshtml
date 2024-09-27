@@ -95,8 +95,24 @@
             }
 
             window.addEventListener('load', function ( {
-                
-            }))
+                document.querySelector('input[type="file"]').addEventListener('change', function(){
+                    if(this.files && this.files[0]) {
+                        var img = document.getElementById('PreviewImage');
+                        img.src = URL.createObjectURL(this.files[0]);
+                    }
+                });
+            }));
+
+            function verificarTermos() {
+                let t = document.getElementById("Termos");
+                let s = document.getElementById("submit");
+                t.value = t.checked;
+                if (t.checked) {
+                    s.removeAttribute("disabled");
+                } else {
+                    s.setAttribute("disabled", true);
+                }
+            }
         </script>
     }
 }

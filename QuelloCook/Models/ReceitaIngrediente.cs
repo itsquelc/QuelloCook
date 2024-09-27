@@ -2,6 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QuelloCook.Models;
+
 [Table("ReceitaIngrente")]
     public class ReceitaIngrediente
     {
@@ -17,8 +18,8 @@ namespace QuelloCook.Models;
 
     [Required]
     [StringLength(30)]
-
        public string Quantidade {get; set;}
        
-
+    [StringLength(200)]
+    public string Preparo { get; set; }
     }

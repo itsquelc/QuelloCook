@@ -10,6 +10,7 @@ namespace QuelloCook.Models;
         [Key]
         public string UsuarioId { get; set; }
         [ForeignKey("UsuarioId")]
+       
         public IdentityUser ContaUsuario { get; set; }
 
         [Required]

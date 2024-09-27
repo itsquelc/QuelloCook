@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace QuelloCook.Models;
 
 [Table("Categoria")]
-
     public class Categoria
     {
         [Key]

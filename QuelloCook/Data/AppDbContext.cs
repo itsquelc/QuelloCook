@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using QuelloCook.Models;
 
@@ -6,9 +7,8 @@ namespace QuelloCook.Data;
 
     public class AppDbContext : IdentityDbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext>options) : base(options) 
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) 
         {
-
         }
 
         public DbSet<Categoria> Categorias { get; set; }
@@ -24,6 +24,7 @@ namespace QuelloCook.Data;
         AppDbSeed seed = new(builder);
 
         builder.Entity<ReceitaIngrediente>()
-        .HasKey(ri => new { ri.ReceitaId, ri.IngredienteId });
+         .HasKey(ri => new { ri.ReceitaId, ri.IngredienteId });
     }
+    
 }
