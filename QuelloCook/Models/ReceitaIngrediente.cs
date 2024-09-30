@@ -20,6 +20,5 @@ namespace QuelloCook.Models;
     [StringLength(30)]
        public string Quantidade {get; set;}
        
-    [StringLength(200)]
-    public string Preparo { get; set; }
+
     }

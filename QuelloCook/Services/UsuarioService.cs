@@ -282,7 +282,7 @@ public class UsuarioService : IUsuarioService
                 <tr>
                     <td align=""center"" valign=""top"" style=""padding: 36px 24px;"">
                     <a href=""localhost:5143"" target=""_blank"" style=""display: inline-block;"">
-                        <img src=""https://github.com/3-MTecPi/QuelloCookA/blob/b2cff88fe35a5c5283b04639ca5caa43ee91a6bb/GCook/wwwroot/img/logo.png?raw=true"" alt=""Logo"" border=""0"" width=""100"" style=""display: block; width: 100px; max-width: 400px; min-width: 100px;"">
+                        <img src=""https://github.com/3-MTecPi/QuelloCookA/blob/b2cff88fe35a5c5283b04639ca5caa43ee91a6bb/QuelloCook/wwwroot/img/logo.png?raw=true"" alt=""Logo"" border=""0"" width=""100"" style=""display: block; width: 100px; max-width: 400px; min-width: 100px;"">
                     </a>
                     </td>
                 </tr>
