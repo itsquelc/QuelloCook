@@ -28,3 +28,11 @@ feito
 confirmar email 
  
  linha 98 account registro
+
+ dotnet tool install --global dotnet-aspent-codegenerator 
+
+ gerar controller e views de crud
+ dotnet-aspnet-codegenerator controller -name CategoriasController -m Categoria -dc AppDbContext -l "~/Views/Shared/_LayoutAdmin.cshtml" -outDir Controllers
+
+ pacostes a instalar
+ Microsoft.VisualStudio.Web.CodeGeneration.Design
