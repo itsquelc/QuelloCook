@@ -1,14 +1,16 @@
 @model IEnumerable<QuelloCook.Models.Categoria>
-
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Categorias";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>Index</h1>
+<h1 class="fw-bold">Categorias</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">
+        <i class="bi bi-plus-circle"></i>Incluir Categoria
+    
+    </a>
 </p>
 <table class="table">
     <thead>
@@ -38,9 +40,15 @@
                 @Html.DisplayFor(modelItem => item.ExibirHome)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="me-2 text-decoration-none">
+                        <i class="bi bi-pencil-square text-warning"></i>
+                </a> 
+                <a asp-action="Details" asp-route-id="@item.Id" class="me-2 text-decoration-none">
+                    <i class="bi bi-search text-info"></i>
+                </a> 
+                <a asp-action="Delete" asp-route-id="@item.Id">
+                    <i class="bi bi-trash3 text-danger"></i>
+                </a>
             </td>
         </tr>
 }
